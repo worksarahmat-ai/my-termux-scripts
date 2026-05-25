@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+export DISPLAY=:1
+export XDG_RUNTIME_DIR=${TMPDIR}
+firefox "$@" >/dev/null 2>&1 &

@@ -1,0 +1,15 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+pkill -f termux-x11 2>/dev/null
+pkill xfce4-session
+pkill xfdesktop
+pkill xfce4-panel
+
+export DISPLAY=:1
+export XDG_RUNTIME_DIR=${TMPDIR}
+export PULSE_SERVER=127.0.0.1
+
+termux-x11 :1 -ac -legacy-drawing &
+sleep 3
+
+dbus-launch --exit-with-session startxfce4
